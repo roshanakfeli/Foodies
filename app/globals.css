@@ -1,14 +1,97 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Montserrat:wght@400;700&display=swap");
 
 @tailwind base;
+
+@layer base {
+  h1 {
+    @apply text-2xl font-bold;
+  }
+  h2 {
+    @apply text-4xl font-extrabold;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  p {
+    @apply my-4;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(90deg, #f9572a, #ff9b05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border: none;
+    color: #ffffff;
+    font-size: 1.25rem;
+    border-radius: 2px;
+    font: inherit;
+    cursor: pointer;
+  }
+  .btn-gradient:hover,
+  .btn-gradient:focus {
+    background: linear-gradient(90deg, #fd4715, #f9b241);
+  }
+  .btn-gradient:disabled,
+  .btn-gradient:hover:disabled,
+  .btn-gradient:focus:disabled {
+    background: #ccc;
+    color: #979797;
+    cursor: not-allowed;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-shadow-custom {
+    text-shadow: 0 0 18px rgba(248, 190, 42, 0.8);
+  }
+
+  .text-custom-shadow {
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+  }
+
+  .highlight-text {
+    background: linear-gradient(90deg, #f9572a, #ff8a05);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
+}
+
+.nav a:hover,
+.nav a:active {
+  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 18px rgba(248, 190, 42, 0.8);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ff8a05, #f9b331);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-h1 {
+  background: linear-gradient(90deg, #f9572a, #ff8a05);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(90deg, #f9572a, #ff9b05);
+  -webkit-background-clip: text; /* For text gradient */
+  -webkit-text-fill-color: transparent; /* For text gradient */
 }
